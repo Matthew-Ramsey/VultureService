@@ -4,7 +4,6 @@
 
 package me.Ramsey.uk.Panes.Management;
 
-import com.sun.istack.internal.Nullable;
 import me.Ramsey.uk.Jobs.Job;
 import me.Ramsey.uk.Main;
 import me.Ramsey.uk.User;
@@ -29,7 +28,7 @@ public class EditUserPane extends JLayeredPane {
      * @param user the user to edit
      * @param previous the previous pane
      */
-    public EditUserPane(User user, @Nullable JLayeredPane previous) {
+    public EditUserPane(User user, JLayeredPane previous) {
         this.user = user;
         this.previous = previous;
         initComponents();
@@ -41,7 +40,7 @@ public class EditUserPane extends JLayeredPane {
      * @param previous the previous pane
      * @param isNewUser whether the user is new or not
      */
-    public EditUserPane(User user, @Nullable JLayeredPane previous, boolean isNewUser) {
+    public EditUserPane(User user, JLayeredPane previous, boolean isNewUser) {
         this.user = user;
         this.previous = previous;
         this.isNewUser = isNewUser;
