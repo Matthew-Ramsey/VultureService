@@ -28,7 +28,7 @@ public class DatabaseManager {
             insertDefaultData();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException();
         }
     }
 

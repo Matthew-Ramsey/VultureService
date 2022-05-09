@@ -3,7 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/VultureService_jar</output-path>
     <root id="archive" name="VultureService.jar">
       <element id="module-output" name="VultureService" />
-      <element id="library" level="project" name="h2" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/main/resources/h2.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

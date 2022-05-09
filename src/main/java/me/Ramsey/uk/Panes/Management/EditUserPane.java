@@ -112,20 +112,21 @@ public class EditUserPane extends JLayeredPane {
             signOutButton.setBounds(1030, 50, 160, 40);
 
             //---- deleteUserButton ----
-            deleteUserButton.setText("Delete User");
-            deleteUserButton.setFont(new Font("Arial", Font.BOLD, 16));
-            deleteUserButton.addActionListener(e -> {
-                try {
-                    Main.getDatabaseManager().deleteUser(user);
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                } finally {
-                    Main.openPane(new ManagementPane());
-                }
-            });
-            editUserPane.add(deleteUserButton, JLayeredPane.DEFAULT_LAYER);
-            deleteUserButton.setBounds(1030, 150, 160, 40);
-
+            if (!Main.user.getUUID().equals(user.getUUID())) {
+                deleteUserButton.setText("Delete User");
+                deleteUserButton.setFont(new Font("Arial", Font.BOLD, 16));
+                deleteUserButton.addActionListener(e -> {
+                    try {
+                        Main.getDatabaseManager().deleteUser(user);
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    } finally {
+                        Main.openPane(new ManagementPane());
+                    }
+                });
+                editUserPane.add(deleteUserButton, JLayeredPane.DEFAULT_LAYER);
+                deleteUserButton.setBounds(1030, 150, 160, 40);
+            }
             //---- nameColumLabel ----
             nameLabel.setText("Name");
             nameLabel.setFont(new Font("Arial", Font.PLAIN, 16));
